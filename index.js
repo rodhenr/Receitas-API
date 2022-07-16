@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 const port = 8080;
 const apiRoutes = require("./app/routes/api.routes");
 const app = express();
-app.use(apiRoutes);
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/api", apiRoutes);
 
 mongoose.connect("mongodb://localhost:27017/recipedb");
 
