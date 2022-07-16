@@ -2,15 +2,15 @@
 
 Uma aplicação onde é possível usando verbos HTTP gerenciar receitas no banco de dados.
 
-GET (/api) -> Nessa rota é possível enviar um GET para receber a lista de todas receitas cadastradas no banco de dados.
+GET (/api) -> Todas receitas cadastradas no banco de dados.
 
-GET (/api/:id) -> Nessa rota é possível receber os dados de uma receita individual, sendo necessário passar o ID referente a esta receita.
+GET (/api/:id) -> Dados de uma receita individual, sendo necessário passar o ID referente a esta receita.
 
-POST (/api) -> É possível através do metódo POST cadastrar novas receitas no banco de dados, para isso é necessário incluir no body da requisição as seguintes informações: name, description, ingredients, source, tags e image.
+POST (/api) -> Cadastro de novas receitas no banco de dados. Os campos obrigatórios que devem ser enviadas no body da requisição são "name" e "ingredients", já os campos opcionais são "description", "source", "tags" e "image".
 
-PATCH (/api/:id/:field) -> Nessa rota é possível alterar a informação de algum campo de alguma receita específica, para isso é necessário além dos params corretos também enviar no body da requisição o conteúdo que deseja que seja inserido no campo desejado.
+PATCH (/api/:id/:field) -> Altera a informação de algum campo de alguma receita específica. É necessário enviar no body da requisição um campo chamado "data" contendo o conteúdo que deseja que seja inserido no banco de dados.
 
-DELETE (/api/:id) -> Aqui é possível remover do banco de dados uma receita específica através do método DELETE.
+DELETE (/api/:id) -> Remove do banco de dados uma receita específica.
 
 ## Tecnologias :man_technologist:
 
@@ -20,6 +20,7 @@ Para este projeto foram utilizadas as seguintes tecnologias:
 - [Express](https://expressjs.com/pt-br/)
 - [Mongoose](https://mongoosejs.com/)
 - [Nodemon](https://nodemon.io/)
+- [Mongoose-Sequence](https://www.npmjs.com/package/mongoose-sequence)
 
 ## Como replicar este projeto :dvd:
 
